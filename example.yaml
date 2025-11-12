@@ -1,0 +1,22 @@
+# you can use kubectl explain pod to get the apiVersion
+# metadata is where you put unique information. Metadata is separate your pods.You can give them a unique name.
+# kind is where we define what the object is. If we want to create a pod, we would use kind: Pod, if we want to create a deployment, we would use kind: Deployment
+# spec where we put the information about which container we gonna use, which port we gonna use for this container etc.
+# use Pod to get a template
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    app.kubernetes.io/name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: <Image>
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: <Port>
