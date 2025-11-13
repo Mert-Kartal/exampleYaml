@@ -3,6 +3,10 @@
 # kind is where we define what the object is. If we want to create a pod, we would use kind: Pod, if we want to create a deployment, we would use kind: Deployment
 # spec where we put the information about which container we gonna use, which port we gonna use for this container etc.
 # use Pod to get a template
+# use Job to get a job template
+# use CronJob to get a cronjob template
+# for job and cronjob, use apiVersion: batch/v1
+# for daemonset, use apiVersion: apps/v1
 
 apiVersion: v1
 kind: Pod
@@ -20,3 +24,4 @@ spec:
         cpu: "500m"
     ports:
       - containerPort: <Port>
+
